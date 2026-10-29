@@ -42,7 +42,7 @@ EMO = {"creative":"🎨","community":"🫶","body":"🧘‍♀️","adventure":"
 NAME = {"creative":"Creative and making","community":"Community and people","body":"Body and wellbeing","adventure":"Adventure and travel","self":"Self and identity","learn":"Learning and food","home":"Home and admin"}
 lis=[]
 for i,(st,cat,g,n,mo) in enumerate(G,1):
-    badge = {"done":'<span class="badge b-done">done 💖</span>',"doing":'<span class="badge b-doing">in progress 🦋</span>',"todo":""}[st]
+    badge = {"done":'<span class="badge b-done">done 💖</span>',"doing":'<span class="badge b-doing">in progress ✨</span>',"todo":""}[st]
     lis.append(f'''    <li class="goal {st}" id="goal-{i}" data-st="{st}" data-cat="{cat}" data-mo="{mo}">
       <span class="num">{i}</span>
       <span class="emo" role="img" aria-label="{NAME[cat]}">{EMO[cat]}</span>
