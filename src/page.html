@@ -1,0 +1,288 @@
+<title>Debbie's %%AGE%% Before %%AGE%%</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<style>
+/* layout: one cosy column. Cake-and-candles header, a row of hearts as the progress bar, pill filters, then the list as soft rounded notes with a category emoji each. */
+:root{
+  --bg:#FFF2F5; --card:#FFFFFF; --ink:#4A2C35; --soft:#9B7480; --line:rgba(74,44,53,.12); --shadow:rgba(74,44,53,.13);
+  --pink:#FF6F96; --pink-t:#FFE1EA; --butter:#F5B83D; --butter-t:#FFF0CC; --mint:#5FA885; --mint-t:#DDF2E6; --lilac:#A98BE0;
+  --f-disp:'Baloo 2','Nunito',system-ui,sans-serif;
+  --f:'Nunito',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#21161A; --card:#2D1E24; --ink:#FBEAF0; --soft:#C9A3AF; --line:rgba(251,234,240,.13); --shadow:rgba(0,0,0,.45);
+  --pink:#FF8DAE; --pink-t:#4A2532; --butter:#FFC95E; --butter-t:#463818; --mint:#82C9A6; --mint-t:#1F3A2E; --lilac:#C3AAF2; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#21161A; --card:#2D1E24; --ink:#FBEAF0; --soft:#C9A3AF; --line:rgba(251,234,240,.13); --shadow:rgba(0,0,0,.45);
+  --pink:#FF8DAE; --pink-t:#4A2532; --butter:#FFC95E; --butter-t:#463818; --mint:#82C9A6; --mint-t:#1F3A2E; --lilac:#C3AAF2; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f);font-size:17px;line-height:1.6;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));overflow-x:hidden}
+.wrap{max-width:720px;margin:0 auto;padding-block:36px 72px;position:relative}
+h1,h2{text-wrap:balance}
+button:focus-visible,select:focus-visible{outline:3px solid var(--lilac);outline-offset:3px}
+
+/* header */
+header{text-align:center;position:relative;margin-bottom:26px}
+.fl{position:absolute;font-size:1.25rem;opacity:.6;animation:bob 3.6s ease-in-out infinite;pointer-events:none}
+.fl.a{top:4px;left:6%}.fl.b{top:30px;right:7%;font-size:1.5rem;animation-delay:.7s}
+.fl.c{top:120px;left:0;font-size:1rem;animation-delay:1.3s}.fl.d{top:140px;right:1%;animation-delay:2s}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-8px) rotate(5deg)}}
+.cake{width:92px;height:92px;display:block;margin:0 auto 6px}
+.pill-top{display:inline-flex;gap:6px;align-items:center;font-family:var(--f-disp);font-weight:600;font-size:13px;color:var(--pink);
+  background:var(--pink-t);border:1.5px solid color-mix(in srgb,var(--pink) 40%,transparent);border-radius:999px;padding:5px 15px;margin-bottom:12px}
+h1{font-family:var(--f-disp);font-weight:800;font-size:clamp(48px,12vw,84px);line-height:.95;margin:0 0 8px;letter-spacing:-.01em}
+h1 .b4{color:var(--pink)}
+.sub{font-size:18px;color:var(--soft);margin:0 auto 18px;max-width:34ch}
+.intro{text-align:left;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:18px 20px;box-shadow:0 12px 26px -20px var(--shadow)}
+.intro p{margin:0 0 10px}.intro p:last-child{margin:0}
+.intro .hi{font-family:var(--f-disp);font-weight:700;font-size:19px;color:var(--pink)}
+
+/* progress */
+.prog{margin:22px 0 24px;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:18px 18px 16px;box-shadow:0 12px 26px -20px var(--shadow)}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:14px}
+.stat{border-radius:16px;padding:10px 8px;text-align:center}
+.stat b{display:block;font-family:var(--f-disp);font-weight:800;font-size:30px;line-height:1.1;font-variant-numeric:tabular-nums}
+.stat span{font-size:13.5px;font-weight:600}
+.s1{background:var(--pink-t)}.s1 b{color:var(--pink)}
+.s2{background:var(--butter-t)}.s2 b{color:color-mix(in srgb,var(--butter) 75%,var(--ink))}
+.s3{background:var(--mint-t)}.s3 b{color:var(--mint)}
+.hearts{position:relative;display:flex;flex-wrap:wrap;gap:12px 8px;justify-content:center}
+.mo{display:flex;flex-direction:column;align-items:center;gap:4px;padding:6px 6px 4px;border-radius:14px;background:var(--bg);min-width:44px}
+.mo.empty{opacity:.55}
+.mh{display:flex;flex-wrap:wrap;justify-content:center;gap:2px;max-width:120px;min-height:26px;align-items:center}
+.ml{font-family:var(--f-disp);font-weight:600;font-size:12.5px;color:var(--soft);white-space:nowrap}
+.none{color:var(--soft);font-size:18px;line-height:26px}
+.h{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;font-size:20px;line-height:1;text-decoration:none;
+  color:color-mix(in srgb,var(--soft) 40%,transparent);cursor:pointer;transition:transform .15s ease}
+.h.done{color:var(--pink)}
+.h.doing{color:var(--butter)}
+.h:hover,.h:focus-visible,.h.on{transform:scale(1.3)}
+.h:focus-visible{outline:2px solid var(--lilac);outline-offset:1px}
+.tip{position:absolute;z-index:5;max-width:260px;background:var(--ink);color:var(--bg);font-size:14px;font-weight:600;line-height:1.35;
+  padding:7px 11px;border-radius:12px;pointer-events:none;box-shadow:0 8px 20px -10px var(--shadow)}
+.goal{scroll-margin-top:calc(env(safe-area-inset-top,0px) + 24px)}
+.goal.flash{animation:flash 1.6s ease}
+@keyframes flash{0%,30%{box-shadow:0 0 0 4px var(--pink);transform:scale(1.015)}100%{box-shadow:0 8px 18px -16px var(--shadow);transform:none}}
+.key{display:flex;justify-content:center;flex-wrap:wrap;gap:4px 16px;font-size:13px;color:var(--soft);margin-top:10px}
+.key i{font-style:normal;font-size:15px;margin-right:4px}
+
+/* up next */
+.next{margin:0 0 24px;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:18px 18px 16px;box-shadow:0 12px 26px -20px var(--shadow)}
+.next h2{font-family:var(--f-disp);font-weight:800;font-size:24px;line-height:1.2;margin:0 0 12px}
+.next h2 span{color:var(--pink)}
+.ncols{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:14px}
+@media (max-width:560px){.ncols{grid-template-columns:minmax(0,1fr)}}
+.ncol{background:var(--bg);border-radius:16px;padding:12px 14px;min-width:0}
+.ncol h3{margin:0 0 8px;font-family:var(--f-disp);font-weight:700;font-size:15px;color:var(--soft)}
+.ncol ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.ncol a{display:flex;gap:8px;align-items:flex-start;color:var(--ink);text-decoration:none;font-weight:700;font-size:15.5px;line-height:1.4;border-radius:10px;padding:4px 6px;margin:0 -6px}
+.ncol a:hover{background:var(--pink-t)}
+.ncol a:focus-visible{outline:2px solid var(--lilac);outline-offset:1px}
+.ncol a .e{flex:0 0 auto}
+.ncol a .t{min-width:0;overflow-wrap:anywhere}
+.ncol .mini{font-family:var(--f-disp);font-weight:600;font-size:12px;border-radius:999px;padding:0 8px;margin-left:6px;background:var(--butter-t);color:color-mix(in srgb,var(--butter) 70%,var(--ink));white-space:nowrap}
+.ncol.later a{font-weight:600;font-size:14.5px}
+.ncol .quiet{color:var(--soft);font-size:15px;margin:0}
+.ncol .more{color:var(--soft);font-size:13.5px;margin:6px 0 0}
+
+/* filters */
+.filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:6px}
+.chip{font-family:var(--f-disp);font-weight:600;font-size:14.5px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);
+  padding:7px 16px;border-radius:999px;cursor:pointer}
+.chip:hover{border-color:var(--pink)}
+.chip[aria-pressed="true"]{background:var(--pink);border-color:var(--pink);color:#fff}
+.cat{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--soft);margin-left:auto}
+.cat select{font-family:var(--f);font-size:15px;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:999px;padding:7px 12px}
+@media (max-width:560px){.cat{margin-left:0;flex-basis:100%}}
+.showing{font-size:14.5px;color:var(--soft);margin:8px 2px 14px}
+
+/* goals */
+ol.goals{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.goal{display:flex;gap:12px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:13px 16px 13px 12px;
+  box-shadow:0 8px 18px -16px var(--shadow)}
+.num{flex:0 0 34px;height:34px;border-radius:50%;display:grid;place-items:center;font-family:var(--f-disp);font-weight:700;font-size:16px;
+  background:var(--bg);color:var(--soft);font-variant-numeric:tabular-nums;margin-top:1px}
+.emo{flex:0 0 auto;font-size:21px;line-height:34px}
+.body{min-width:0;flex:1}
+.g{font-weight:700;font-size:17px;overflow-wrap:anywhere}
+.n{display:block;font-size:15px;color:var(--soft);margin-top:2px;line-height:1.5}
+.badge{display:inline-block;font-family:var(--f-disp);font-weight:600;font-size:12.5px;border-radius:999px;padding:1px 10px;margin-left:8px;vertical-align:2px;white-space:nowrap}
+.b-done{background:var(--pink-t);color:var(--pink)}
+.b-doing{background:var(--butter-t);color:color-mix(in srgb,var(--butter) 70%,var(--ink))}
+.goal.done{background:color-mix(in srgb,var(--pink-t) 45%,var(--card))}
+.goal.done .num{background:var(--pink);color:#fff}
+.goal.done .g{text-decoration:line-through;text-decoration-color:color-mix(in srgb,var(--pink) 60%,transparent);text-decoration-thickness:2px}
+.goal.doing{border-color:color-mix(in srgb,var(--butter) 55%,transparent)}
+.goal.doing .num{background:var(--butter);color:#fff}
+.empty{text-align:center;color:var(--soft);padding:22px;border:1.5px dashed var(--line);border-radius:18px}
+
+.sign{text-align:center;margin-top:40px;font-family:var(--f-disp);font-weight:700;font-size:28px;color:var(--pink)}
+.small{text-align:center;font-size:14px;color:var(--soft);margin-top:4px}
+@media (prefers-reduced-motion:reduce){.fl{animation:none}}
+</style>
+
+<div class="wrap">
+  <header>
+    <span class="fl a" aria-hidden="true">🌸</span>
+    <span class="fl b" aria-hidden="true">💖</span>
+    <span class="fl c" aria-hidden="true">✨</span>
+    <span class="fl d" aria-hidden="true">🎀</span>
+
+    <svg class="cake" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+      <rect x="40" y="18" width="5" height="20" rx="2" fill="var(--lilac)"/>
+      <rect x="55" y="18" width="5" height="20" rx="2" fill="var(--mint)"/>
+      <path d="M42.5 8c-3 4-3 7 0 8 3-1 3-4 0-8Z" fill="var(--butter)"/>
+      <path d="M57.5 8c-3 4-3 7 0 8 3-1 3-4 0-8Z" fill="var(--butter)"/>
+      <rect x="18" y="38" width="64" height="44" rx="10" fill="var(--card)" stroke="var(--ink)" stroke-width="3"/>
+      <path d="M18 50c6 6 10 6 16 0s10-6 16 0 10 6 16 0 10-6 16 0V48a10 10 0 0 0-10-10H28a10 10 0 0 0-10 10Z" fill="var(--pink)" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round"/>
+      <circle cx="34" cy="66" r="3" fill="var(--lilac)"/><circle cx="50" cy="70" r="3" fill="var(--butter)"/><circle cx="66" cy="66" r="3" fill="var(--mint)"/>
+      <rect x="10" y="80" width="80" height="7" rx="3.5" fill="var(--pink-t)" stroke="var(--ink)" stroke-width="3"/>
+    </svg>
+
+    <span class="pill-top">🎂 Auckland · %%BDAY_LONG%%</span>
+    <h1>%%AGE%% <span class="b4">before</span> %%AGE%%</h1>
+    <p class="sub">My list of brave little things to finish before I turn %%AGE%% 💕</p>
+
+    <div class="intro">
+      <p class="hi">Hi, it's Debbie! 👋</p>
+      <p>I want to do %%AGE%% things before I'm %%AGE%%&hellip; some new, some borrowed (thanks for the ideas) and some scary (!).</p>
+    </div>
+  </header>
+
+  <section class="prog" aria-label="Progress">
+    <div class="stats">
+      <div class="stat s1"><b id="nDone">10</b><span>done 💖</span></div>
+      <div class="stat s2"><b id="nDoing">3</b><span>in progress ✨</span></div>
+      <div class="stat s3"><b id="nDays">166</b><span>days to go 🎂</span></div>
+    </div>
+    <div class="hearts" id="hearts" aria-label="Goals by month">
+      %%HEARTS%%
+      <div class="tip" id="tip" hidden></div>
+    </div>
+    <div class="key"><span><i style="color:var(--pink)">♥</i>done</span><span><i style="color:var(--butter)">♥</i>in progress</span><span><i style="color:color-mix(in srgb,var(--soft) 40%,transparent)">♥</i>still to do</span><span>Tap a heart to jump to that goal</span></div>
+  </section>
+
+  <section class="next" aria-labelledby="nextH">
+    <h2 id="nextH">Up next <span id="nextMonth">✨</span></h2>
+    <div class="ncols">
+      <div class="ncol"><h3 id="nowH">This month</h3><ul id="nowList"></ul></div>
+      <div class="ncol later"><h3 id="laterH">Next month</h3><ul id="laterList"></ul><p class="more" id="laterMore" hidden></p></div>
+    </div>
+  </section>
+
+  <div class="filters" role="group" aria-label="Filter the list">
+    <button class="chip" type="button" data-f="all" aria-pressed="true">All %%COUNT%%</button>
+    <button class="chip" type="button" data-f="done" aria-pressed="false">Done</button>
+    <button class="chip" type="button" data-f="doing" aria-pressed="false">In progress</button>
+    <button class="chip" type="button" data-f="todo" aria-pressed="false">Still to do</button>
+    <label class="cat" for="catSel">Category
+      <select id="catSel">
+        <option value="all">Everything</option>
+        <option value="creative">🎨 Creative and making</option>
+        <option value="community">🫶 Community and people</option>
+        <option value="body">🧘‍♀️ Body and wellbeing</option>
+        <option value="adventure">✈️ Adventure and travel</option>
+        <option value="self">🌷 Self and identity</option>
+        <option value="learn">📚 Learning and food</option>
+        <option value="home">🏡 Home and admin</option>
+      </select>
+    </label>
+  </div>
+  <p class="showing" id="showing" aria-live="polite">Showing all %%COUNT%%.</p>
+
+  <ol class="goals" id="goals">
+%%GOALS%%
+  </ol>
+  <p class="empty" id="empty" hidden>Nothing matches those filters 🙈</p>
+
+  <p class="sign">xoxo, Debbie 💌</p>
+  <p class="small">Last updated 29 October 2026. Months for finished goals are approximate.</p>
+</div>
+
+<script>
+(function(){
+  var items=[].slice.call(document.querySelectorAll('#goals .goal'));
+  var chips=[].slice.call(document.querySelectorAll('.chip'));
+  var sel=document.getElementById('catSel');
+  var f='all', c='all';
+  function apply(){
+    var shown=0;
+    items.forEach(function(li){
+      var ok=(f==='all'||li.getAttribute('data-st')===f)&&(c==='all'||li.getAttribute('data-cat')===c);
+      li.hidden=!ok; if(ok)shown++;
+    });
+    chips.forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-f')===f?'true':'false');});
+    document.getElementById('empty').hidden=shown>0;
+    document.getElementById('showing').textContent=(f==='all'&&c==='all')?'Showing all '+items.length+'.':'Showing '+shown+' of '+items.length+'.';
+  }
+  chips.forEach(function(b){b.addEventListener('click',function(){f=b.getAttribute('data-f');apply();});});
+  sel.addEventListener('change',function(){c=sel.value;apply();});
+  document.getElementById('nDone').textContent=items.filter(function(l){return l.getAttribute('data-st')==='done';}).length;
+  document.getElementById('nDoing').textContent=items.filter(function(l){return l.getAttribute('data-st')==='doing';}).length;
+  // hearts: label on hover/focus, jump to the goal on click
+  var wrap=document.getElementById('hearts'), tip=document.getElementById('tip');
+  var hearts=[].slice.call(wrap.querySelectorAll('.h'));
+  function show(h){
+    tip.textContent=h.getAttribute('data-tip'); tip.hidden=false;
+    var w=wrap.getBoundingClientRect(), r=h.getBoundingClientRect();
+    var tw=tip.offsetWidth, th=tip.offsetHeight;
+    var x=r.left-w.left+r.width/2-tw/2; x=Math.max(0,Math.min(w.width-tw,x));
+    var y=r.top-w.top-th-8; if(y<-40) y=r.bottom-w.top+8;
+    tip.style.left=x+'px'; tip.style.top=y+'px';
+  }
+  function hide(){tip.hidden=true;}
+  hearts.forEach(function(h){
+    h.addEventListener('mouseenter',function(){show(h);});
+    h.addEventListener('mouseleave',hide);
+    h.addEventListener('focus',function(){show(h);});
+    h.addEventListener('blur',hide);
+    h.addEventListener('click',function(ev){
+      ev.preventDefault();
+      jump(h.getAttribute('href').slice(1));
+      show(h); setTimeout(hide,1800);
+    });
+  });
+  function jump(id){
+    var li=document.getElementById(id);
+    if(li.hidden){f='all';c='all';sel.value='all';apply();}
+    li.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'center'});
+    li.classList.remove('flash'); void li.offsetWidth; li.classList.add('flash');
+  }
+
+  // up next: what's planned this month and next, from today's date
+  (function(){
+    var MN=['January','February','March','April','May','June','July','August','September','October','November','December'];
+    var now=new Date(); var START=new Date(2026,10,1); if(now<START) now=START; // show November onwards
+    function key(d){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0');}
+    var thisKey=key(now), nextD=new Date(now.getFullYear(),now.getMonth()+1,1), nextKey=key(nextD);
+    function goalsFor(k){return items.filter(function(li){return li.getAttribute('data-mo')===k&&li.getAttribute('data-st')!=='done';});}
+    function row(li){
+      var a=document.createElement('a'); a.href='#'+li.id;
+      var e=document.createElement('span'); e.className='e'; e.textContent=li.querySelector('.emo').textContent;
+      var t=document.createElement('span'); t.className='t'; t.textContent=li.querySelector('.g').textContent;
+      if(li.getAttribute('data-st')==='doing'){var m=document.createElement('span');m.className='mini';m.textContent='in progress';t.appendChild(m);}
+      a.appendChild(e); a.appendChild(t);
+      a.addEventListener('click',function(ev){ev.preventDefault();jump(li.id);});
+      var w=document.createElement('li'); w.appendChild(a); return w;
+    }
+    var nowG=goalsFor(thisKey), laterG=goalsFor(nextKey);
+    document.getElementById('nextMonth').textContent='· '+MN[now.getMonth()]+' ✨';
+    document.getElementById('nowH').textContent=MN[now.getMonth()];
+    document.getElementById('laterH').textContent='Then '+MN[nextD.getMonth()];
+    var nl=document.getElementById('nowList'), ll=document.getElementById('laterList');
+    if(nowG.length) nowG.forEach(function(li){nl.appendChild(row(li));});
+    else nl.innerHTML='<li><p class="quiet">Nothing planned this month. Rest counts too 🌙</p></li>';
+    var SHOW=4;
+    if(laterG.length) laterG.slice(0,SHOW).forEach(function(li){ll.appendChild(row(li));});
+    else ll.innerHTML='<li><p class="quiet">Nothing planned yet.</p></li>';
+    if(laterG.length>SHOW){var m=document.getElementById('laterMore');m.textContent='and '+(laterG.length-SHOW)+' more in '+MN[nextD.getMonth()];m.hidden=false;}
+  })();
+
+  var n=new Date(), t=new Date(n.getFullYear(),n.getMonth(),n.getDate()), e=new Date(%%BDAY_JS%%);
+  document.getElementById('nDays').textContent=Math.max(0,Math.round((e-t)/864e5));
+})();
+</script>

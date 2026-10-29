@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="31 things I want to do before I turn 31.">
+<meta property="og:title" content="31 before 31 💕">
+<meta property="og:description" content="31 things I want to do before I turn 31: some new, some borrowed and some scary.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎂</text></svg>">
+<title>Debbie's 31 Before 31</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<style>
+[hidden]{display:none!important}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+/* layout: one cosy column. Cake-and-candles header, a row of hearts as the progress bar, pill filters, then the list as soft rounded notes with a category emoji each. */
+:root{
+  --bg:#FFF2F5; --card:#FFFFFF; --ink:#4A2C35; --soft:#9B7480; --line:rgba(74,44,53,.12); --shadow:rgba(74,44,53,.13);
+  --pink:#FF6F96; --pink-t:#FFE1EA; --butter:#F5B83D; --butter-t:#FFF0CC; --mint:#5FA885; --mint-t:#DDF2E6; --lilac:#A98BE0;
+  --f-disp:'Baloo 2','Nunito',system-ui,sans-serif;
+  --f:'Nunito',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#21161A; --card:#2D1E24; --ink:#FBEAF0; --soft:#C9A3AF; --line:rgba(251,234,240,.13); --shadow:rgba(0,0,0,.45);
+  --pink:#FF8DAE; --pink-t:#4A2532; --butter:#FFC95E; --butter-t:#463818; --mint:#82C9A6; --mint-t:#1F3A2E; --lilac:#C3AAF2; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#21161A; --card:#2D1E24; --ink:#FBEAF0; --soft:#C9A3AF; --line:rgba(251,234,240,.13); --shadow:rgba(0,0,0,.45);
+  --pink:#FF8DAE; --pink-t:#4A2532; --butter:#FFC95E; --butter-t:#463818; --mint:#82C9A6; --mint-t:#1F3A2E; --lilac:#C3AAF2; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f);font-size:17px;line-height:1.6;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));overflow-x:hidden}
+.wrap{max-width:720px;margin:0 auto;padding-block:36px 72px;position:relative}
+h1,h2{text-wrap:balance}
+button:focus-visible,select:focus-visible{outline:3px solid var(--lilac);outline-offset:3px}
+
+/* header */
+header{text-align:center;position:relative;margin-bottom:26px}
+.fl{position:absolute;font-size:1.25rem;opacity:.6;animation:bob 3.6s ease-in-out infinite;pointer-events:none}
+.fl.a{top:4px;left:6%}.fl.b{top:30px;right:7%;font-size:1.5rem;animation-delay:.7s}
+.fl.c{top:120px;left:0;font-size:1rem;animation-delay:1.3s}.fl.d{top:140px;right:1%;animation-delay:2s}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-8px) rotate(5deg)}}
+.cake{width:92px;height:92px;display:block;margin:0 auto 6px}
+.pill-top{display:inline-flex;gap:6px;align-items:center;font-family:var(--f-disp);font-weight:600;font-size:13px;color:var(--pink);
+  background:var(--pink-t);border:1.5px solid color-mix(in srgb,var(--pink) 40%,transparent);border-radius:999px;padding:5px 15px;margin-bottom:12px}
+h1{font-family:var(--f-disp);font-weight:800;font-size:clamp(48px,12vw,84px);line-height:.95;margin:0 0 8px;letter-spacing:-.01em}
+h1 .b4{color:var(--pink)}
+.sub{font-size:18px;color:var(--soft);margin:0 auto 18px;max-width:34ch}
+.intro{text-align:left;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:18px 20px;box-shadow:0 12px 26px -20px var(--shadow)}
+.intro p{margin:0 0 10px}.intro p:last-child{margin:0}
+.intro .hi{font-family:var(--f-disp);font-weight:700;font-size:19px;color:var(--pink)}
+
+/* progress */
+.prog{margin:22px 0 24px;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:18px 18px 16px;box-shadow:0 12px 26px -20px var(--shadow)}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:14px}
+.stat{border-radius:16px;padding:10px 8px;text-align:center}
+.stat b{display:block;font-family:var(--f-disp);font-weight:800;font-size:30px;line-height:1.1;font-variant-numeric:tabular-nums}
+.stat span{font-size:13.5px;font-weight:600}
+.s1{background:var(--pink-t)}.s1 b{color:var(--pink)}
+.s2{background:var(--butter-t)}.s2 b{color:color-mix(in srgb,var(--butter) 75%,var(--ink))}
+.s3{background:var(--mint-t)}.s3 b{color:var(--mint)}
+.hearts{position:relative;display:flex;flex-wrap:wrap;gap:12px 8px;justify-content:center}
+.mo{display:flex;flex-direction:column;align-items:center;gap:4px;padding:6px 6px 4px;border-radius:14px;background:var(--bg);min-width:44px}
+.mo.empty{opacity:.55}
+.mh{display:flex;flex-wrap:wrap;justify-content:center;gap:2px;max-width:120px;min-height:26px;align-items:center}
+.ml{font-family:var(--f-disp);font-weight:600;font-size:12.5px;color:var(--soft);white-space:nowrap}
+.none{color:var(--soft);font-size:18px;line-height:26px}
+.h{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;font-size:20px;line-height:1;text-decoration:none;
+  color:color-mix(in srgb,var(--soft) 40%,transparent);cursor:pointer;transition:transform .15s ease}
+.h.done{color:var(--pink)}
+.h.doing{color:var(--butter)}
+.h:hover,.h:focus-visible,.h.on{transform:scale(1.3)}
+.h:focus-visible{outline:2px solid var(--lilac);outline-offset:1px}
+.tip{position:absolute;z-index:5;max-width:260px;background:var(--ink);color:var(--bg);font-size:14px;font-weight:600;line-height:1.35;
+  padding:7px 11px;border-radius:12px;pointer-events:none;box-shadow:0 8px 20px -10px var(--shadow)}
+.goal{scroll-margin-top:calc(env(safe-area-inset-top,0px) + 24px)}
+.goal.flash{animation:flash 1.6s ease}
+@keyframes flash{0%,30%{box-shadow:0 0 0 4px var(--pink);transform:scale(1.015)}100%{box-shadow:0 8px 18px -16px var(--shadow);transform:none}}
+.key{display:flex;justify-content:center;flex-wrap:wrap;gap:4px 16px;font-size:13px;color:var(--soft);margin-top:10px}
+.key i{font-style:normal;font-size:15px;margin-right:4px}
+
+/* up next */
+.next{margin:0 0 24px;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:18px 18px 16px;box-shadow:0 12px 26px -20px var(--shadow)}
+.next h2{font-family:var(--f-disp);font-weight:800;font-size:24px;line-height:1.2;margin:0 0 12px}
+.next h2 span{color:var(--pink)}
+.ncols{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:14px}
+@media (max-width:560px){.ncols{grid-template-columns:minmax(0,1fr)}}
+.ncol{background:var(--bg);border-radius:16px;padding:12px 14px;min-width:0}
+.ncol h3{margin:0 0 8px;font-family:var(--f-disp);font-weight:700;font-size:15px;color:var(--soft)}
+.ncol ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.ncol a{display:flex;gap:8px;align-items:flex-start;color:var(--ink);text-decoration:none;font-weight:700;font-size:15.5px;line-height:1.4;border-radius:10px;padding:4px 6px;margin:0 -6px}
+.ncol a:hover{background:var(--pink-t)}
+.ncol a:focus-visible{outline:2px solid var(--lilac);outline-offset:1px}
+.ncol a .e{flex:0 0 auto}
+.ncol a .t{min-width:0;overflow-wrap:anywhere}
+.ncol .mini{font-family:var(--f-disp);font-weight:600;font-size:12px;border-radius:999px;padding:0 8px;margin-left:6px;background:var(--butter-t);color:color-mix(in srgb,var(--butter) 70%,var(--ink));white-space:nowrap}
+.ncol.later a{font-weight:600;font-size:14.5px}
+.ncol .quiet{color:var(--soft);font-size:15px;margin:0}
+.ncol .more{color:var(--soft);font-size:13.5px;margin:6px 0 0}
+
+/* filters */
+.filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:6px}
+.chip{font-family:var(--f-disp);font-weight:600;font-size:14.5px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);
+  padding:7px 16px;border-radius:999px;cursor:pointer}
+.chip:hover{border-color:var(--pink)}
+.chip[aria-pressed="true"]{background:var(--pink);border-color:var(--pink);color:#fff}
+.cat{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--soft);margin-left:auto}
+.cat select{font-family:var(--f);font-size:15px;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:999px;padding:7px 12px}
+@media (max-width:560px){.cat{margin-left:0;flex-basis:100%}}
+.showing{font-size:14.5px;color:var(--soft);margin:8px 2px 14px}
+
+/* goals */
+ol.goals{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.goal{display:flex;gap:12px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:13px 16px 13px 12px;
+  box-shadow:0 8px 18px -16px var(--shadow)}
+.num{flex:0 0 34px;height:34px;border-radius:50%;display:grid;place-items:center;font-family:var(--f-disp);font-weight:700;font-size:16px;
+  background:var(--bg);color:var(--soft);font-variant-numeric:tabular-nums;margin-top:1px}
+.emo{flex:0 0 auto;font-size:21px;line-height:34px}
+.body{min-width:0;flex:1}
+.g{font-weight:700;font-size:17px;overflow-wrap:anywhere}
+.n{display:block;font-size:15px;color:var(--soft);margin-top:2px;line-height:1.5}
+.badge{display:inline-block;font-family:var(--f-disp);font-weight:600;font-size:12.5px;border-radius:999px;padding:1px 10px;margin-left:8px;vertical-align:2px;white-space:nowrap}
+.b-done{background:var(--pink-t);color:var(--pink)}
+.b-doing{background:var(--butter-t);color:color-mix(in srgb,var(--butter) 70%,var(--ink))}
+.goal.done{background:color-mix(in srgb,var(--pink-t) 45%,var(--card))}
+.goal.done .num{background:var(--pink);color:#fff}
+.goal.done .g{text-decoration:line-through;text-decoration-color:color-mix(in srgb,var(--pink) 60%,transparent);text-decoration-thickness:2px}
+.goal.doing{border-color:color-mix(in srgb,var(--butter) 55%,transparent)}
+.goal.doing .num{background:var(--butter);color:#fff}
+.empty{text-align:center;color:var(--soft);padding:22px;border:1.5px dashed var(--line);border-radius:18px}
+
+.sign{text-align:center;margin-top:40px;font-family:var(--f-disp);font-weight:700;font-size:28px;color:var(--pink)}
+.small{text-align:center;font-size:14px;color:var(--soft);margin-top:4px}
+@media (prefers-reduced-motion:reduce){.fl{animation:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="fl a" aria-hidden="true">🌸</span>
+    <span class="fl b" aria-hidden="true">💖</span>
+    <span class="fl c" aria-hidden="true">✨</span>
+    <span class="fl d" aria-hidden="true">🎀</span>
+
+    <svg class="cake" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+      <rect x="40" y="18" width="5" height="20" rx="2" fill="var(--lilac)"/>
+      <rect x="55" y="18" width="5" height="20" rx="2" fill="var(--mint)"/>
+      <path d="M42.5 8c-3 4-3 7 0 8 3-1 3-4 0-8Z" fill="var(--butter)"/>
+      <path d="M57.5 8c-3 4-3 7 0 8 3-1 3-4 0-8Z" fill="var(--butter)"/>
+      <rect x="18" y="38" width="64" height="44" rx="10" fill="var(--card)" stroke="var(--ink)" stroke-width="3"/>
+      <path d="M18 50c6 6 10 6 16 0s10-6 16 0 10 6 16 0 10-6 16 0V48a10 10 0 0 0-10-10H28a10 10 0 0 0-10 10Z" fill="var(--pink)" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round"/>
+      <circle cx="34" cy="66" r="3" fill="var(--lilac)"/><circle cx="50" cy="70" r="3" fill="var(--butter)"/><circle cx="66" cy="66" r="3" fill="var(--mint)"/>
+      <rect x="10" y="80" width="80" height="7" rx="3.5" fill="var(--pink-t)" stroke="var(--ink)" stroke-width="3"/>
+    </svg>
+
+    <span class="pill-top">🎂 Auckland · Tuesday 13 April 2027</span>
+    <h1>31 <span class="b4">before</span> 31</h1>
+    <p class="sub">My list of brave little things to finish before I turn 31 💕</p>
+
+    <div class="intro">
+      <p class="hi">Hi, it's Debbie! 👋</p>
+      <p>I want to do 31 things before I'm 31&hellip; some new, some borrowed (thanks for the ideas) and some scary (!).</p>
+    </div>
+  </header>
+
+  <section class="prog" aria-label="Progress">
+    <div class="stats">
+      <div class="stat s1"><b id="nDone">10</b><span>done 💖</span></div>
+      <div class="stat s2"><b id="nDoing">3</b><span>in progress ✨</span></div>
+      <div class="stat s3"><b id="nDays">166</b><span>days to go 🎂</span></div>
+    </div>
+    <div class="hearts" id="hearts" aria-label="Goals by month">
+      <div class="mo"><div class="mh"><a class="h done" href="#goal-1" data-tip="1. Join a craft circle" aria-label="Goal 1: Join a craft circle, done">♥</a><a class="h done" href="#goal-2" data-tip="2. Keep a visual diary" aria-label="Goal 2: Keep a visual diary, done">♥</a></div><span class="ml">May ’26</span></div>
+      <div class="mo empty"><div class="mh"><span class="none" aria-hidden="true">·</span></div><span class="ml">Jun</span></div>
+      <div class="mo empty"><div class="mh"><span class="none" aria-hidden="true">·</span></div><span class="ml">Jul</span></div>
+      <div class="mo"><div class="mh"><a class="h done" href="#goal-3" data-tip="3. Volunteer at an arts organisation" aria-label="Goal 3: Volunteer at an arts organisation, done">♥</a><a class="h done" href="#goal-4" data-tip="4. Learn &quot;She Used to Be Mine&quot; on the keyboard" aria-label="Goal 4: Learn &quot;She Used to Be Mine&quot; on the keyboard, done">♥</a></div><span class="ml">Aug</span></div>
+      <div class="mo"><div class="mh"><a class="h done" href="#goal-5" data-tip="5. Write letters to my future self" aria-label="Goal 5: Write letters to my future self, done">♥</a><a class="h done" href="#goal-6" data-tip="6. Read 12 books" aria-label="Goal 6: Read 12 books, done">♥</a></div><span class="ml">Sep</span></div>
+      <div class="mo"><div class="mh"><a class="h done" href="#goal-7" data-tip="7. Dry meaningful flowers as keepsakes" aria-label="Goal 7: Dry meaningful flowers as keepsakes, done">♥</a><a class="h done" href="#goal-8" data-tip="8. Mentor someone in my industry" aria-label="Goal 8: Mentor someone in my industry, done">♥</a><a class="h done" href="#goal-9" data-tip="9. Choose a personal scent for the year: Princess by Vera Wang" aria-label="Goal 9: Choose a personal scent for the year: Princess by Vera Wang, done">♥</a><a class="h done" href="#goal-10" data-tip="10. Write a portrait of my future self: habits, passions, character traits, appearance" aria-label="Goal 10: Write a portrait of my future self: habits, passions, character traits, appearance, done">♥</a></div><span class="ml">Oct</span></div>
+      <div class="mo"><div class="mh"><a class="h todo" href="#goal-16" data-tip="16. Get good at pool" aria-label="Goal 16: Get good at pool, still to do">♥</a><a class="h todo" href="#goal-18" data-tip="18. Cook a 3-course meal from one specific cuisine" aria-label="Goal 18: Cook a 3-course meal from one specific cuisine, still to do">♥</a><a class="h todo" href="#goal-27" data-tip="27. Reach inbox zero and clean up my digital clutter" aria-label="Goal 27: Reach inbox zero and clean up my digital clutter, still to do">♥</a><a class="h todo" href="#goal-29" data-tip="29. Learn pottery properly" aria-label="Goal 29: Learn pottery properly, still to do">♥</a></div><span class="ml">Nov</span></div>
+      <div class="mo"><div class="mh"><a class="h doing" href="#goal-12" data-tip="12. Thrift-flip an item of clothing" aria-label="Goal 12: Thrift-flip an item of clothing, in progress">♥</a><a class="h doing" href="#goal-13" data-tip="13. Make a giant piece of art for my wall" aria-label="Goal 13: Make a giant piece of art for my wall, in progress">♥</a><a class="h todo" href="#goal-20" data-tip="20. Make a zine of my life" aria-label="Goal 20: Make a zine of my life, still to do">♥</a><a class="h todo" href="#goal-21" data-tip="21. Record and post a cover of a song" aria-label="Goal 21: Record and post a cover of a song, still to do">♥</a><a class="h todo" href="#goal-22" data-tip="22. Start a polaroid wall of memories and friends" aria-label="Goal 22: Start a polaroid wall of memories and friends, still to do">♥</a><a class="h todo" href="#goal-23" data-tip="23. Hike somewhere" aria-label="Goal 23: Hike somewhere, still to do">♥</a><a class="h todo" href="#goal-25" data-tip="25. Spend a whole weekend with my phone off" aria-label="Goal 25: Spend a whole weekend with my phone off, still to do">♥</a><a class="h todo" href="#goal-26" data-tip="26. Sketch live at the AUM festival while I volunteer" aria-label="Goal 26: Sketch live at the AUM festival while I volunteer, still to do">♥</a></div><span class="ml">Dec</span></div>
+      <div class="mo"><div class="mh"><a class="h doing" href="#goal-11" data-tip="11. Commit to a long-term art programme: a term-long painting class or studio" aria-label="Goal 11: Commit to a long-term art programme: a term-long painting class or studio, in progress">♥</a><a class="h todo" href="#goal-28" data-tip="28. Have a proper pamper day: massage, facial and hair" aria-label="Goal 28: Have a proper pamper day: massage, facial and hair, still to do">♥</a></div><span class="ml">Jan ’27</span></div>
+      <div class="mo"><div class="mh"><a class="h todo" href="#goal-15" data-tip="15. Start a yoga practice" aria-label="Goal 15: Start a yoga practice, still to do">♥</a><a class="h todo" href="#goal-30" data-tip="30. Do one thing that properly scares me" aria-label="Goal 30: Do one thing that properly scares me, still to do">♥</a></div><span class="ml">Feb</span></div>
+      <div class="mo"><div class="mh"><a class="h todo" href="#goal-14" data-tip="14. Cut down my drinking, one drink less each month" aria-label="Goal 14: Cut down my drinking, one drink less each month, still to do">♥</a><a class="h todo" href="#goal-17" data-tip="17. Get a new tattoo of something sentimental" aria-label="Goal 17: Get a new tattoo of something sentimental, still to do">♥</a><a class="h todo" href="#goal-31" data-tip="31. Take a relaxing trip somewhere" aria-label="Goal 31: Take a relaxing trip somewhere, still to do">♥</a></div><span class="ml">Mar</span></div>
+      <div class="mo"><div class="mh"><a class="h todo" href="#goal-19" data-tip="19. Plan and host a themed 31st birthday party" aria-label="Goal 19: Plan and host a themed 31st birthday party, still to do">♥</a><a class="h todo" href="#goal-24" data-tip="24. Get a city pad or flat" aria-label="Goal 24: Get a city pad or flat, still to do">♥</a></div><span class="ml">Apr</span></div>
+      <div class="tip" id="tip" hidden></div>
+    </div>
+    <div class="key"><span><i style="color:var(--pink)">♥</i>done</span><span><i style="color:var(--butter)">♥</i>in progress</span><span><i style="color:color-mix(in srgb,var(--soft) 40%,transparent)">♥</i>still to do</span><span>Tap a heart to jump to that goal</span></div>
+  </section>
+
+  <section class="next" aria-labelledby="nextH">
+    <h2 id="nextH">Up next <span id="nextMonth">✨</span></h2>
+    <div class="ncols">
+      <div class="ncol"><h3 id="nowH">This month</h3><ul id="nowList"></ul></div>
+      <div class="ncol later"><h3 id="laterH">Next month</h3><ul id="laterList"></ul><p class="more" id="laterMore" hidden></p></div>
+    </div>
+  </section>
+
+  <div class="filters" role="group" aria-label="Filter the list">
+    <button class="chip" type="button" data-f="all" aria-pressed="true">All 31</button>
+    <button class="chip" type="button" data-f="done" aria-pressed="false">Done</button>
+    <button class="chip" type="button" data-f="doing" aria-pressed="false">In progress</button>
+    <button class="chip" type="button" data-f="todo" aria-pressed="false">Still to do</button>
+    <label class="cat" for="catSel">Category
+      <select id="catSel">
+        <option value="all">Everything</option>
+        <option value="creative">🎨 Creative and making</option>
+        <option value="community">🫶 Community and people</option>
+        <option value="body">🧘‍♀️ Body and wellbeing</option>
+        <option value="adventure">✈️ Adventure and travel</option>
+        <option value="self">🌷 Self and identity</option>
+        <option value="learn">📚 Learning and food</option>
+        <option value="home">🏡 Home and admin</option>
+      </select>
+    </label>
+  </div>
+  <p class="showing" id="showing" aria-live="polite">Showing all 31.</p>
+
+  <ol class="goals" id="goals">
+    <li class="goal done" id="goal-1" data-st="done" data-cat="creative" data-mo="2026-05">
+      <span class="num">1</span>
+      <span class="emo" role="img" aria-label="Creative and making">🎨</span>
+      <div class="body"><span class="g">Join a craft circle</span><span class="badge b-done">done 💖</span><span class="n">May 2026</span></div>
+    </li>
+    <li class="goal done" id="goal-2" data-st="done" data-cat="creative" data-mo="2026-05">
+      <span class="num">2</span>
+      <span class="emo" role="img" aria-label="Creative and making">🎨</span>
+      <div class="body"><span class="g">Keep a visual diary</span><span class="badge b-done">done 💖</span><span class="n">May 2026</span></div>
+    </li>
+    <li class="goal done" id="goal-3" data-st="done" data-cat="community" data-mo="2026-08">
+      <span class="num">3</span>
+      <span class="emo" role="img" aria-label="Community and people">🫶</span>
+      <div class="body"><span class="g">Volunteer at an arts organisation</span><span class="badge b-done">done 💖</span><span class="n">August 2026</span></div>
+    </li>
+    <li class="goal done" id="goal-4" data-st="done" data-cat="creative" data-mo="2026-08">
+      <span class="num">4</span>
+      <span class="emo" role="img" aria-label="Creative and making">🎨</span>
+      <div class="body"><span class="g">Learn &quot;She Used to Be Mine&quot; on the keyboard</span><span class="badge b-done">done 💖</span><span class="n">August 2026</span></div>
+    </li>
+    <li class="goal done" id="goal-5" data-st="done" data-cat="self" data-mo="2026-09">
+      <span class="num">5</span>
+      <span class="emo" role="img" aria-label="Self and identity">🌷</span>
+      <div class="body"><span class="g">Write letters to my future self</span><span class="badge b-done">done 💖</span><span class="n">September 2026</span></div>
+    </li>
+    <li class="goal done" id="goal-6" data-st="done" data-cat="learn" data-mo="2026-09">
+      <span class="num">6</span>
+      <span class="emo" role="img" aria-label="Learning and food">📚</span>
+      <div class="body"><span class="g">Read 12 books</span><span class="badge b-done">done 💖</span><span class="n">September 2026</span></div>
+    </li>
+    <li class="goal done" id="goal-7" data-st="done" data-cat="creative" data-mo="2026-10">
+      <span class="num">7</span>
+      <span class="emo" role="img" aria-label="Creative and making">🎨</span>
+      <div class="body"><span class="g">Dry meaningful flowers as keepsakes</span><span class="badge b-done">done 💖</span><span class="n">October 2026</span></div>
+    </li>
+    <li class="goal done" id="goal-8" data-st="done" data-cat="community" data-mo="2026-10">
+      <span class="num">8</span>
+      <span class="emo" role="img" aria-label="Community and people">🫶</span>
+      <div class="body"><span class="g">Mentor someone in my industry</span><span class="badge b-done">done 💖</span><span class="n">October 2026</span></div>
+    </li>
+    <li class="goal done" id="goal-9" data-st="done" data-cat="self" data-mo="2026-10">
+      <span class="num">9</span>
+      <span class="emo" role="img" aria-label="Self and identity">🌷</span>
+      <div class="body"><span class="g">Choose a personal scent for the year: Princess by Vera Wang</span><span class="badge b-done">done 💖</span><span class="n">October 2026</span></div>
+    </li>
+    <li class="goal done" id="goal-10" data-st="done" data-cat="self" data-mo="2026-10">
+      <span class="num">10</span>
+      <span class="emo" role="img" aria-label="Self and identity">🌷</span>
+      <div class="body"><span class="g">Write a portrait of my future self: habits, passions, character traits, appearance</span><span class="badge b-done">done 💖</span><span class="n">October 2026</span></div>
+    </li>
+    <li class="goal doing" id="goal-11" data-st="doing" data-cat="creative" data-mo="2027-01">
+      <span class="num">11</span>
+      <span class="emo" role="img" aria-label="Creative and making">🎨</span>
+      <div class="body"><span class="g">Commit to a long-term art programme: a term-long painting class or studio</span><span class="badge b-doing">in progress ✨</span><span class="n">Still at the research stage. Aiming to enrol by mid-January.</span></div>
+    </li>
+    <li class="goal doing" id="goal-12" data-st="doing" data-cat="creative" data-mo="2026-12">
+      <span class="num">12</span>
+      <span class="emo" role="img" aria-label="Creative and making">🎨</span>
+      <div class="body"><span class="g">Thrift-flip an item of clothing</span><span class="badge b-doing">in progress ✨</span><span class="n">December. Maybe the AAG shirt, with my name stitched on.</span></div>
+    </li>
+    <li class="goal doing" id="goal-13" data-st="doing" data-cat="creative" data-mo="2026-12">
+      <span class="num">13</span>
+      <span class="emo" role="img" aria-label="Creative and making">🎨</span>
+      <div class="body"><span class="g">Make a giant piece of art for my wall</span><span class="badge b-doing">in progress ✨</span><span class="n">Materials over Labour Day weekend, then painting through December.</span></div>
+    </li>
+    <li class="goal todo" id="goal-14" data-st="todo" data-cat="body" data-mo="2027-03">
+      <span class="num">14</span>
+      <span class="emo" role="img" aria-label="Body and wellbeing">🧘‍♀️</span>
+      <div class="body"><span class="g">Cut down my drinking, one drink less each month</span><span class="n">4 drinks in November, 3 in December, 2 in January, 1 in February, then none in March. Lol.</span></div>
+    </li>
+    <li class="goal todo" id="goal-15" data-st="todo" data-cat="body" data-mo="2027-02">
+      <span class="num">15</span>
+      <span class="emo" role="img" aria-label="Body and wellbeing">🧘‍♀️</span>
+      <div class="body"><span class="g">Start a yoga practice</span><span class="n">February.</span></div>
+    </li>
+    <li class="goal todo" id="goal-16" data-st="todo" data-cat="body" data-mo="2026-11">
+      <span class="num">16</span>
+      <span class="emo" role="img" aria-label="Body and wellbeing">🧘‍♀️</span>
+      <div class="body"><span class="g">Get good at pool</span><span class="n">One regular night a week, from mid-November.</span></div>
+    </li>
+    <li class="goal todo" id="goal-17" data-st="todo" data-cat="self" data-mo="2027-03">
+      <span class="num">17</span>
+      <span class="emo" role="img" aria-label="Self and identity">🌷</span>
+      <div class="body"><span class="g">Get a new tattoo of something sentimental</span><span class="n">March 2027.</span></div>
+    </li>
+    <li class="goal todo" id="goal-18" data-st="todo" data-cat="learn" data-mo="2026-11">
+      <span class="num">18</span>
+      <span class="emo" role="img" aria-label="Learning and food">📚</span>
+      <div class="body"><span class="g">Cook a 3-course meal from one specific cuisine</span><span class="n">November.</span></div>
+    </li>
+    <li class="goal todo" id="goal-19" data-st="todo" data-cat="community" data-mo="2027-04">
+      <span class="num">19</span>
+      <span class="emo" role="img" aria-label="Community and people">🫶</span>
+      <div class="body"><span class="g">Plan and host a themed 31st birthday party</span><span class="n">Planning from mid-December. The party is Saturday 10 April.</span></div>
+    </li>
+    <li class="goal todo" id="goal-20" data-st="todo" data-cat="creative" data-mo="2026-12">
+      <span class="num">20</span>
+      <span class="emo" role="img" aria-label="Creative and making">🎨</span>
+      <div class="body"><span class="g">Make a zine of my life</span><span class="n">Drawing it over the Christmas break.</span></div>
+    </li>
+    <li class="goal todo" id="goal-21" data-st="todo" data-cat="creative" data-mo="2026-12">
+      <span class="num">21</span>
+      <span class="emo" role="img" aria-label="Creative and making">🎨</span>
+      <div class="body"><span class="g">Record and post a cover of a song</span><span class="n">December.</span></div>
+    </li>
+    <li class="goal todo" id="goal-22" data-st="todo" data-cat="community" data-mo="2026-12">
+      <span class="num">22</span>
+      <span class="emo" role="img" aria-label="Community and people">🫶</span>
+      <div class="body"><span class="g">Start a polaroid wall of memories and friends</span><span class="n">Late December.</span></div>
+    </li>
+    <li class="goal todo" id="goal-23" data-st="todo" data-cat="adventure" data-mo="2026-12">
+      <span class="num">23</span>
+      <span class="emo" role="img" aria-label="Adventure and travel">✈️</span>
+      <div class="body"><span class="g">Hike somewhere</span><span class="n">Over the Christmas break.</span></div>
+    </li>
+    <li class="goal todo" id="goal-24" data-st="todo" data-cat="home" data-mo="2027-04">
+      <span class="num">24</span>
+      <span class="emo" role="img" aria-label="Home and admin">🏡</span>
+      <div class="body"><span class="g">Get a city pad or flat</span><span class="n">April.</span></div>
+    </li>
+    <li class="goal todo" id="goal-25" data-st="todo" data-cat="body" data-mo="2026-12">
+      <span class="num">25</span>
+      <span class="emo" role="img" aria-label="Body and wellbeing">🧘‍♀️</span>
+      <div class="body"><span class="g">Spend a whole weekend with my phone off</span><span class="n">Boxing Day weekend. This one will be hard.</span></div>
+    </li>
+    <li class="goal todo" id="goal-26" data-st="todo" data-cat="creative" data-mo="2026-12">
+      <span class="num">26</span>
+      <span class="emo" role="img" aria-label="Creative and making">🎨</span>
+      <div class="body"><span class="g">Sketch live at the AUM festival while I volunteer</span><span class="n">30 December to 2 January.</span></div>
+    </li>
+    <li class="goal todo" id="goal-27" data-st="todo" data-cat="home" data-mo="2026-11">
+      <span class="num">27</span>
+      <span class="emo" role="img" aria-label="Home and admin">🏡</span>
+      <div class="body"><span class="g">Reach inbox zero and clean up my digital clutter</span><span class="n">November.</span></div>
+    </li>
+    <li class="goal todo" id="goal-28" data-st="todo" data-cat="body" data-mo="2027-01">
+      <span class="num">28</span>
+      <span class="emo" role="img" aria-label="Body and wellbeing">🧘‍♀️</span>
+      <div class="body"><span class="g">Have a proper pamper day: massage, facial and hair</span><span class="n">A free weekend in late January.</span></div>
+    </li>
+    <li class="goal todo" id="goal-29" data-st="todo" data-cat="creative" data-mo="2026-11">
+      <span class="num">29</span>
+      <span class="emo" role="img" aria-label="Creative and making">🎨</span>
+      <div class="body"><span class="g">Learn pottery properly</span><span class="n">November.</span></div>
+    </li>
+    <li class="goal todo" id="goal-30" data-st="todo" data-cat="adventure" data-mo="2027-02">
+      <span class="num">30</span>
+      <span class="emo" role="img" aria-label="Adventure and travel">✈️</span>
+      <div class="body"><span class="g">Do one thing that properly scares me</span><span class="n">February. I still have to decide what.</span></div>
+    </li>
+    <li class="goal todo" id="goal-31" data-st="todo" data-cat="adventure" data-mo="2027-03">
+      <span class="num">31</span>
+      <span class="emo" role="img" aria-label="Adventure and travel">✈️</span>
+      <div class="body"><span class="g">Take a relaxing trip somewhere</span><span class="n">March.</span></div>
+    </li>
+  </ol>
+  <p class="empty" id="empty" hidden>Nothing matches those filters 🙈</p>
+
+  <p class="sign">xoxo, Debbie 💌</p>
+  <p class="small">Last updated 29 October 2026. Months for finished goals are approximate.</p>
+</div>
+
+<script>
+(function(){
+  var items=[].slice.call(document.querySelectorAll('#goals .goal'));
+  var chips=[].slice.call(document.querySelectorAll('.chip'));
+  var sel=document.getElementById('catSel');
+  var f='all', c='all';
+  function apply(){
+    var shown=0;
+    items.forEach(function(li){
+      var ok=(f==='all'||li.getAttribute('data-st')===f)&&(c==='all'||li.getAttribute('data-cat')===c);
+      li.hidden=!ok; if(ok)shown++;
+    });
+    chips.forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-f')===f?'true':'false');});
+    document.getElementById('empty').hidden=shown>0;
+    document.getElementById('showing').textContent=(f==='all'&&c==='all')?'Showing all '+items.length+'.':'Showing '+shown+' of '+items.length+'.';
+  }
+  chips.forEach(function(b){b.addEventListener('click',function(){f=b.getAttribute('data-f');apply();});});
+  sel.addEventListener('change',function(){c=sel.value;apply();});
+  document.getElementById('nDone').textContent=items.filter(function(l){return l.getAttribute('data-st')==='done';}).length;
+  document.getElementById('nDoing').textContent=items.filter(function(l){return l.getAttribute('data-st')==='doing';}).length;
+  // hearts: label on hover/focus, jump to the goal on click
+  var wrap=document.getElementById('hearts'), tip=document.getElementById('tip');
+  var hearts=[].slice.call(wrap.querySelectorAll('.h'));
+  function show(h){
+    tip.textContent=h.getAttribute('data-tip'); tip.hidden=false;
+    var w=wrap.getBoundingClientRect(), r=h.getBoundingClientRect();
+    var tw=tip.offsetWidth, th=tip.offsetHeight;
+    var x=r.left-w.left+r.width/2-tw/2; x=Math.max(0,Math.min(w.width-tw,x));
+    var y=r.top-w.top-th-8; if(y<-40) y=r.bottom-w.top+8;
+    tip.style.left=x+'px'; tip.style.top=y+'px';
+  }
+  function hide(){tip.hidden=true;}
+  hearts.forEach(function(h){
+    h.addEventListener('mouseenter',function(){show(h);});
+    h.addEventListener('mouseleave',hide);
+    h.addEventListener('focus',function(){show(h);});
+    h.addEventListener('blur',hide);
+    h.addEventListener('click',function(ev){
+      ev.preventDefault();
+      jump(h.getAttribute('href').slice(1));
+      show(h); setTimeout(hide,1800);
+    });
+  });
+  function jump(id){
+    var li=document.getElementById(id);
+    if(li.hidden){f='all';c='all';sel.value='all';apply();}
+    li.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'center'});
+    li.classList.remove('flash'); void li.offsetWidth; li.classList.add('flash');
+  }
+
+  // up next: what's planned this month and next, from today's date
+  (function(){
+    var MN=['January','February','March','April','May','June','July','August','September','October','November','December'];
+    var now=new Date(); var START=new Date(2026,10,1); if(now<START) now=START; // show November onwards
+    function key(d){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0');}
+    var thisKey=key(now), nextD=new Date(now.getFullYear(),now.getMonth()+1,1), nextKey=key(nextD);
+    function goalsFor(k){return items.filter(function(li){return li.getAttribute('data-mo')===k&&li.getAttribute('data-st')!=='done';});}
+    function row(li){
+      var a=document.createElement('a'); a.href='#'+li.id;
+      var e=document.createElement('span'); e.className='e'; e.textContent=li.querySelector('.emo').textContent;
+      var t=document.createElement('span'); t.className='t'; t.textContent=li.querySelector('.g').textContent;
+      if(li.getAttribute('data-st')==='doing'){var m=document.createElement('span');m.className='mini';m.textContent='in progress';t.appendChild(m);}
+      a.appendChild(e); a.appendChild(t);
+      a.addEventListener('click',function(ev){ev.preventDefault();jump(li.id);});
+      var w=document.createElement('li'); w.appendChild(a); return w;
+    }
+    var nowG=goalsFor(thisKey), laterG=goalsFor(nextKey);
+    document.getElementById('nextMonth').textContent='· '+MN[now.getMonth()]+' ✨';
+    document.getElementById('nowH').textContent=MN[now.getMonth()];
+    document.getElementById('laterH').textContent='Then '+MN[nextD.getMonth()];
+    var nl=document.getElementById('nowList'), ll=document.getElementById('laterList');
+    if(nowG.length) nowG.forEach(function(li){nl.appendChild(row(li));});
+    else nl.innerHTML='<li><p class="quiet">Nothing planned this month. Rest counts too 🌙</p></li>';
+    var SHOW=4;
+    if(laterG.length) laterG.slice(0,SHOW).forEach(function(li){ll.appendChild(row(li));});
+    else ll.innerHTML='<li><p class="quiet">Nothing planned yet.</p></li>';
+    if(laterG.length>SHOW){var m=document.getElementById('laterMore');m.textContent='and '+(laterG.length-SHOW)+' more in '+MN[nextD.getMonth()];m.hidden=false;}
+  })();
+
+  var n=new Date(), t=new Date(n.getFullYear(),n.getMonth(),n.getDate()), e=new Date(2027,3,13);
+  document.getElementById('nDays').textContent=Math.max(0,Math.round((e-t)/864e5));
+})();
+</script>
+</body>
+</html>
