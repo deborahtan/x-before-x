@@ -42,7 +42,7 @@ EMO = {"creative":"🎨","community":"🫶","body":"🧘‍♀️","adventure":"
 NAME = {"creative":"Creative and making","community":"Community and people","body":"Body and wellbeing","adventure":"Adventure and travel","self":"Self and identity","learn":"Learning and food","home":"Home and admin"}
 lis=[]
 for i,(st,cat,g,n,mo) in enumerate(G,1):
-    badge = {"done":'<span class="badge b-done">done 💖</span>',"doing":'<span class="badge b-doing">in progress ✨</span>',"todo":""}[st]
+    badge = {"done":'<span class="badge b-done">done 💖</span>',"doing":'<span class="badge b-doing">in progress 🦋</span>',"todo":""}[st]
     lis.append(f'''    <li class="goal {st}" id="goal-{i}" data-st="{st}" data-cat="{cat}" data-mo="{mo}">
       <span class="num">{i}</span>
       <span class="emo" role="img" aria-label="{NAME[cat]}">{EMO[cat]}</span>
@@ -84,4 +84,7 @@ def standalone(src):
       '<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎂</text></svg>">\n'
       +head+style+'\n</head>\n<body>\n'+rest[j:].strip()+'\n</body>\n</html>\n')
 open(os.path.join(HERE,'..','index.html'),'w').write(standalone(out))
+import sys
+if '--artifact' in sys.argv:  # also write the Claude artifact version
+    open(sys.argv[sys.argv.index('--artifact')+1],'w').write(out)
 print(len(G))
